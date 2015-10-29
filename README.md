@@ -1,10 +1,10 @@
-## Movie Search
+# Movie Search
 
-# Task
+## Task
 
 Provide a NodeJS server and Angular UI which allows a customer to search for movies which they might like to watch.
 
-# Assumptions
+## Assumptions
 
 Based on the requirements provided, a few assumptions where made regarding the functionality of the results from the search.
 
@@ -14,18 +14,18 @@ Based on the requirements provided, a few assumptions where made regarding the f
 
 - Page design wasn't a priority only due to the time spent on the main test.  Again in production we'd want to make this pretty.
 
-# Architecture
+## Architecture
 
-Server
+### Server
 On the server, I seperated out the repository for ease of unit testing and good coding seperation practises.  A POST method was chosen for the express REST end-point since we're sending filter type information across the wire.
 
-Client UI
+### Client UI
 For this test I kept the service, directive and controller within the same app.js file, but normally I would seperate these out into seperate JS files and bring them together using (Module.Export/Require) with something like Babel/WebPack, etc.
 
-Testing
+### Testing
 I've added tests to all three areas, (server-unit, unit and protractor) using the same commands and setup which came with the test.
 
-# Commands to run:
+## Commands to run:
 
 Please run "npm install" after cloning the project to install the node modules.
 
