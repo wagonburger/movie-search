@@ -7,7 +7,7 @@ describe('dataRepository Tests', function(){
         expect('nowtv.com').to.contain('nowtv');
     });
 
-    it('dataRepository returns a total of 160 movies with no filter, limit or skip', function(done){
+    it('should dataRepository return a total of 160 movies with no filter, limit or skip', function(done){
 		var filter = null;
 		var skip = null;
 		var limit = null;
@@ -22,7 +22,7 @@ describe('dataRepository Tests', function(){
 		    });
     });
 
-    it('dataRepository total field matches the actual movies returned with no filter', function(done){
+    it('should dataRepository total field matches the actual movies returned with no filter', function(done){
 		var filter = null;
 		var skip = null;
 		var limit = null;
@@ -37,7 +37,7 @@ describe('dataRepository Tests', function(){
 		    });
     });
 
-    it('dataRepository returns 61 movies when you filter on the word "the"', function(done){
+    it('should dataRepository return 61 movies when you filter on the word "the"', function(done){
 		var filter = 'the';
 		var skip = null;
 		var limit = null;
@@ -52,7 +52,7 @@ describe('dataRepository Tests', function(){
 		    });
     });
 
-    it('dataRepository returns 20 movies when limit is applied to 20 and also check total in search with "the" filter', function(done){
+    it('should dataRepository return 20 movies when limit is applied to 20 and also check total in search with "the" filter', function(done){
 		var filter = 'the';
 		var skip = null;
 		var limit = 20;
