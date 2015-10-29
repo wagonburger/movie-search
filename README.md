@@ -29,7 +29,10 @@ I've added tests to all three areas, (server-unit, unit and protractor) using th
 
 Please run "npm install" after cloning the project to install the node modules.
 
- npm run start - starts local server
- npm run unit - run the karma unit tests
- npm run e2e - run the protractor tests 
- npm run server-unit - run the backend mocha tests
+- npm run start - starts local server
+ 
+- npm run unit - run the karma unit tests
+
+- npm run e2e - run the protractor tests 
+
+- npm run server-unit - run the backend mocha tests
