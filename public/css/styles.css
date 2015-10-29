@@ -1,0 +1,47 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.filter{
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	padding: 10px;
+	height: 130px;
+	border: 1px solid lightgray;
+}
+.filter input{
+	height: 30px;
+	padding: 0 5px;
+}
+.filter label{
+	font-size: 11px;
+	color: red;
+}
+.filter span.matched {
+	padding-left: 10px;
+}
+
+.movies-table{
+	padding: 20px;
+}
+.movies-table table{
+	width: 100%;
+}
+.movies-table table > thead {
+	font-weight: 600;
+}
+.movies-table table td {
+	min-width: 60px;
+	vertical-align: top;
+}
+.movies-table table .title{
+	min-width: 250px;
+}
+.movies-table table .duration{
+	min-width: 120px;
+}
+.pagination-controls {
+	padding-top: 20px;
+	float: right;
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Iceberg Search</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-cloak>
+
+	<div ng-controller="mainController">
+
+ 		<section class="filter">
+ 			<h1>Iceberg Movies</h1>
+
+ 			<div class="input-group">
+				<span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-search"></i></span>
+				<search-filter type="text" on-filter-changed="Vm.onFilterChanged(filter)" ng-model="typeAhead" placeholder="Search"></search-filter>
+				<span class="matched" ng-show="Vm.filter.filterText.length>2 && Vm.totalMoviesInSearch>0">Matched <span ng-bind="Vm.totalMoviesInSearch"></span> of <span ng-bind="Vm.totalMovies"></span> movies total</span>
+			</div>
+			<div>
+				<label ng-show="typeAhead.length>0 && typeAhead.length<3">Enter at least three characters to begin search</label>
+			</div>
+		</section>
+
+		<div class="movies-table">
+	 		<table ng-show="Vm.movies.length > 0">
+	 			<thead>
+	 				<tr>
+						<td>Title</td>
+						<td>Year</td>
+						<td>Rating</td>
+						<td>Duration (mins)</td>
+						<td>Actors</td>
+	 				</tr>
+	 			</thead>
+	 			<tbody>
+	 				<tr ng-repeat="movie in Vm.movies">
+	 					<td class="title"><span ng-bind="movie.title"></span></td>
+	 					<td><span ng-bind="movie.year"></span></td>
+	 					<td><span ng-bind="movie.rating"></span></td>
+	 					<td class="duration"><span ng-bind="(movie.duration / 60) | number : 0"></span></td>
+	 					<td><span ng-bind="Vm.getActors(movie)"></span></td>
+	 				</tr>
+	 			</tbody>
+	 		</table>
+
+	 		<div class="pagination-controls" ng-show="Vm.pagination.numberOfPages() > 1">
+			    <button ng-show="Vm.pagination.previousPageVisible" ng-click="Vm.getMoviesForPage(Vm.filter.filterText, Vm.pagination.currentPage-1)">
+			        Previous
+			    </button>
+			    {{Vm.pagination.currentPage+1}}/{{Vm.pagination.numberOfPages()}}
+			    <button ng-show="Vm.pagination.nextPageVisible" ng-click="Vm.getMoviesForPage(Vm.filter.filterText, Vm.pagination.currentPage+1)">
+			        Next
+			    </button>
+	 		</div>
+
+	 		<div ng-show="Vm.movies.length === 0">
+	 			<span>No matching items</span>
+	 		</div>
+		</div>
+
+	</div>
+
+	<script src="js/lib/angular.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
